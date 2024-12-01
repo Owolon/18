@@ -1,3 +1,3 @@
 ﻿  Решение.c
-C:\Users\ПК\source\repos\Owolon\18\18\Решение.c(31,7): warning C4244: =: преобразование "double" в "float", возможна потеря данных
-C:\Users\ПК\source\repos\Owolon\18\18\Решение.c(104,13): error C2059: синтаксическая ошибка: {
+C:\Users\ПК\source\repos\Owolon\18\18\Решение.c(32,7): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+  18.vcxproj -> C:\Users\ПК\source\repos\Owolon\18\18\x64\Debug\18.exe

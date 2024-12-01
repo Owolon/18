@@ -1,4 +1,5 @@
 #define _CRT_SECURE_NO_DEPRECATE 
+#define DEREF_NULL_PTR
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -39,6 +40,27 @@ float sist(Point z, Point w)
 	M.y= (z.y + w.y / 2 );
 	return 0;
 }
+int full_el(int size, Motocikl *masiv)
+{
+	int g = 0;
+	for (int i = 1; i < size + 1; i++)
+	{
+		printf("¬ведите название марки > ");
+		scanf_s("%s", masiv[i].marka, (int)sizeof(masiv[i].marka));
+		printf("¬ведите год выпуска > ");
+		scanf_s("%d", &masiv[i].year);
+		printf("¬ведите дату регистрации (dd_mm_gggg) > ");
+		scanf_s("%s", masiv[i].data, (int)sizeof(masiv[i].data));
+		printf("¬ведите мощность > ");
+		scanf_s("%d", &masiv[i].mohnost);
+		printf("¬ведите состо€ние мотоцикла, наличие повреждений > ");
+		scanf_s("%s", masiv[i].povr, (int)sizeof(masiv[i].povr));
+		printf("%s %d %s %s %d\n", masiv[i].marka, masiv[i].year, masiv[i].data, masiv[i].povr, masiv[i].mohnost);
+		printf("«аписано чисел %d\n", i);
+	}
+	g++;
+	return g;
+}
 void main()
 {
 	setlocale(LC_CTYPE, "RUS");
@@ -76,36 +98,10 @@ void main()
 	}
 
 
-	Motocikl c;
-	
-	for (int i = 0; i < size; i++)
+	//Motocikl c;
+	full_el(size, masiv);
+	for (int j = 0; j < size ;j++)
 	{
-		printf("¬ведите название марки > ");
-		scanf_s("%s", c.marka, (int)sizeof(c.marka));
-		printf("¬ведено %s\n", c.marka);
-		system("pause");
-		printf("¬ведите год выпуска > ");
-		scanf_s("%d", &c.year);
-		printf("¬ведено %d\n", c.year);
-		system("pause");
-		printf("¬ведите дату регистрации (dd_mm_gggg) > ");
-		scanf_s("%s", c.data, (int)sizeof(c.data));
-		printf("¬ведено %s\n", c.data);
-		system("pause");
-		printf("¬ведите мощность > ");
-		scanf_s("%d", &c.mohnost);
-		printf("¬ведено %d\n", c.mohnost);
-		system("pause");
-		printf("¬ведите состо€ние мотоцикла, наличие повреждений > ");
-		scanf_s("%s", c.povr, (int)sizeof(c.povr));
-		printf("¬ведено %s\n", c.povr);
-
-		printf("%s %d %s %s %d\n", c.marka, c.year, c.data, c.povr, c.mohnost);\
-		masiv[i] = {c.marka, c.year, c.data, c.povr, c.mohnost};
-		masiv++;
-	}
-	for (;;)
-	{
-
+		printf("%s %d %d %s %s", masiv[j].data, masiv[j].year, masiv[j].mohnost, masiv[j].marka, masiv[j].povr);
 	}
 }
